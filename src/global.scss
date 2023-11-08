@@ -1,14 +1,33 @@
+:root {
+  --dark-theme: #282828;
+  --dark-theme-font-color: white;
+}
+
+#root {
+  height: inherit;
+  display: flex;
+}
+
+.main_container {
+  display: inherit;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 * {
   box-sizing: border-box;
+  color: var(--dark-theme-font-color);
+  margin: unset;
+}
+
+body {
+  background: var(--dark-theme);
+  height: 100vh;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
 }

@@ -4,10 +4,10 @@ import "./global.scss";
 
 function App() {
   return (
-    <div className="container">
+    <main className="main_container">
       <TopMenu />
       <Outlet />
-    </div>
+    </main>
   );
 }
 

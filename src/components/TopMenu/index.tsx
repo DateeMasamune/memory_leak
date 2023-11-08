@@ -11,7 +11,7 @@ export const TopMenu = () => {
   }));
 
   return (
-    <nav>
+    <nav className={styles.wrapper}>
       <ul className={styles.topMenu}>
         {routeList?.map(({ path, name }) => (
           <li key={name}>
