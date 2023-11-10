@@ -13,11 +13,61 @@ import styles from "./styles.module.scss";
 
 export const EventsCallback = () => {
   const [coords, setCoords] = useState({ y: 0, x: 0 });
-  const saveCoords = useRef<{ y: number; x: number }[]>([]);
+  const saveCoords = useRef<string[]>([]);
 
   const doSomething = <T,>(gigantObject: T) => gigantObject;
 
-  const handlerCoords = (event: MouseEvent) => {
+  useEffect(() => {
+    window.addEventListener("mousemove", (event) => {
+      const coord = {
+        y: event.clientY,
+        x: event.clientX,
+      };
+      setCoords(coord);
+      saveCoords.current.push(...Array(10000).fill(JSON.stringify(coord)));
+      console.log("==========>saveCoords", saveCoords);
+      doSomething(saveCoords);
+    })
+
+  }, []);
+
+  return (
+    <Layout className={styles.center}>
+      <div>Координаты Y: {coords.y}</div>
+      <div>Координаты X: {coords.x}</div>
+    </Layout>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *   const handlerCoords = (event: MouseEvent) => {
     const coord = {
       y: event.clientY,
       x: event.clientX,
@@ -35,11 +85,4 @@ export const EventsCallback = () => {
       window.removeEventListener("mousemove", handlerCoords);
     };
   }, []);
-
-  return (
-    <Layout className={styles.center}>
-      <div>Координаты Y: {coords.y}</div>
-      <div>Координаты X: {coords.x}</div>
-    </Layout>
-  );
-};
+ */

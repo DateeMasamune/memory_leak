@@ -17,16 +17,12 @@ export const Timers = () => {
   const saveTime = useRef<{ times: string[] }>({ times: [] });
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    setInterval(() => {
       const time = new Date().toLocaleTimeString();
       setCtime(time);
       saveTime.current.times.push(`${time} `);
       console.log('==========>saveTime.', saveTime.current.times);
     }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
   }, []);
 
   return (
@@ -38,3 +34,37 @@ export const Timers = () => {
     </Layout>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *   useEffect(() => {
+    const interval = setInterval(() => {
+      const time = new Date().toLocaleTimeString();
+      setCtime(time);
+      saveTime.current.times.push(`${time} `);
+      console.log('==========>saveTime.', saveTime.current.times);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+ */

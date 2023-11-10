@@ -20,11 +20,6 @@ export const childrenRoutesApp = [
     element: <Timers />,
   },
   {
-    path: "global-variables",
-    name: "Глобальные переменные",
-    element: <GlobalVariables />,
-  },
-  {
     path: "events-callback",
     name: "События",
     element: <EventsCallback />,
@@ -50,9 +45,9 @@ const router = createBrowserRouter([
 ]);
 
 root.render(
-  <React.StrictMode>
+  //<React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
