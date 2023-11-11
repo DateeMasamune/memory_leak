@@ -4,7 +4,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Timers } from "./components/Timers";
-import { GlobalVariables } from "./components/GlobalVariables";
 import { EventsCallback } from "./components/EventsCallback";
 import { DomElements } from "./components/DomElements";
 import { ClosureRef } from "./components/ClosureRef";

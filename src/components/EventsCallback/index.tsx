@@ -15,8 +15,6 @@ export const EventsCallback = () => {
   const [coords, setCoords] = useState({ y: 0, x: 0 });
   const saveCoords = useRef<string[]>([]);
 
-  const doSomething = <T,>(gigantObject: T) => gigantObject;
-
   useEffect(() => {
     window.addEventListener("mousemove", (event) => {
       const coord = {
@@ -26,7 +24,6 @@ export const EventsCallback = () => {
       setCoords(coord);
       saveCoords.current.push(...Array(10000).fill(JSON.stringify(coord)));
       console.log("==========>saveCoords", saveCoords);
-      doSomething(saveCoords);
     })
 
   }, []);
@@ -73,9 +70,8 @@ export const EventsCallback = () => {
       x: event.clientX,
     };
     setCoords(coord);
-    saveCoords.current.push(coord);
+    saveCoords.current.push(...Array(10000).fill(JSON.stringify(coord)));
     console.log("==========>saveCoords", saveCoords);
-    doSomething(saveCoords);
   };
 
   useEffect(() => {
