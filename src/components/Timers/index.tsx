@@ -2,15 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
 import { Layout } from "../Layout";
 
-/**
- *
- * Запускаем таймер без отключения и включаем запись
- * переходим на пустую страницу ждем и останавливаем запись (утечка)
- *
- * Запускаем таймер с отключением и включаем запись
- * переходим на пустую страницу и останавливаем запись (решение проблемы с утечкой)
- */
-
 export const Timers = () => {
   const time = new Date().toLocaleTimeString();
   const [ctime, setCtime] = useState(time);
